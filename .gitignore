@@ -1,3 +1,6 @@
 .env
 .venv
-/alembic
+/alembic/env.py
+
+*.pyc
+
