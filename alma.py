@@ -9,14 +9,16 @@ from typing import Optional, List, Dict, Any
 
 # Try to import database, fall back to sample data
 try:
-    from database import UserRole, ClientType, OperationStatus
-    from crud import db_ops
-    DATABASE_AVAILABLE = True
+    from alma.database import UserRole, ClientType, OperationStatus
+    from alma.crud import db_ops
+   
     print("✅ Database available")
 except ImportError:
-    DATABASE_AVAILABLE = False
+   
     print("⚠️ Using sample data only")
 
+
+DATABASE_AVAILABLE = False
 # Configure page
 st.set_page_config(
     page_title="ALMA - Financial Exchange Control Platform",
