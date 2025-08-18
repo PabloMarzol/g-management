@@ -1,5 +1,3 @@
-[general]
-dataFrameSerialization = "legacy"
 
 [theme]
 primaryColor = "#1f77b4"
