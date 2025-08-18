@@ -3,23 +3,27 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "g-management"
-version = "0.1.0"
-requires-python = ">=3.11"
+name = "alma-platform"
+version = "1.0.0"
+description = "ALMA Financial Exchange Control Platform"
+requires-python = ">=3.9"
+
+# Minimal dependencies for Streamlit Cloud
 dependencies = [
-    "flask[async]>=3.0",
-    "sqlalchemy[asyncio]>=2.0",
-    "asyncpg>=0.29",
-    "alembic>=1.13",
-    "polars>=0.20",
-    "python-dotenv>=1.0",
-    "flask-wtf>=1.2",
-    "wtforms>=3.1",
-    "jinja2>=3.1",
-    "psycopg2-binary>=2.9",   # only for Alembic offline generation
+    "streamlit>=1.28.0",
+    "pandas>=2.0.0",
+    "plotly>=5.15.0",
+    "python-dotenv>=1.0.0",
+]
+
+# Optional database dependencies (only if using database)
+[project.optional-dependencies]
+database = [
+    "sqlalchemy>=2.0.0",
+    "asyncpg>=0.28.0", 
+    "psycopg2-binary>=2.9.0",
 ]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["app*"]
-exclude = ["migrations*"]
+include = ["alma*", "app*"]
