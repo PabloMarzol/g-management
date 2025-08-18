@@ -42,7 +42,7 @@ def setup_environment():
     env_file = Path(".env")
     if not env_file.exists():
         env_content = """# ALMA Configuration
-DATABASE_URL=postgresql://localhost/alma_db
+DATABASE_URL=postgresql://localhost/gmanagement
 SECRET_KEY=dev-secret-key-change-in-production
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token_here
 BINANCE_API_KEY=your_binance_api_key_here
@@ -102,7 +102,7 @@ def run_application():
     try:
         # Run streamlit
         subprocess.run([
-            sys.executable, "-m", "streamlit", "run", "alma_app.py",
+            sys.executable, "-m", "streamlit", "run", "alma.py",
             "--server.port", "8501",
             "--server.address", "0.0.0.0"
         ])
